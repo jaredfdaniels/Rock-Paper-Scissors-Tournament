@@ -172,6 +172,7 @@ public class Main_Menu {
 						btn_custom.setEnabled(true);
 						btn_records.setEnabled(true);
 					}
+					
 				}
 				catch(Exception ex){
 					System.out.print("File not found");
