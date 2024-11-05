@@ -1,20 +1,29 @@
 package rps_gui;
+import java.util.*;
+import java.io.*;
 
 public class Login_Handler {
 	
-	public void Check_Username() {
-		
+	public static String check_username(File source, String username) throws FileNotFoundException {
+		Scanner reader = new Scanner(source);
+		System.out.println();
+		if (reader.next() == username) {
+			return("taken");
+		}
+		else{
+			return("free");
+		}
 	}
-	public void Check_Password() {
+	public void check_password() {
 			
 		}
-	public void Add_Username() {
+	public void add_username() {
 		
 	}
-	public void Add_Password() {
+	public void add_password() {
 		
 	}
-	public void Prompt_Password() {
+	public void prompt_password() {
 		
 	}
 }

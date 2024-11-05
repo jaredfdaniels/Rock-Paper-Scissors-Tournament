@@ -1,4 +1,6 @@
 package rps_gui;
+import java.util.*;
+import java.io.*;
 
 import java.awt.EventQueue;
 
@@ -47,6 +49,8 @@ public class Main_Menu {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		File records = new File ("records.txt");
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(128, 128, 128));
 		frame.setBounds(100, 100, 450, 300);
@@ -87,17 +91,13 @@ public class Main_Menu {
 		lbl_name_not_yet_taken.setBounds(305, 135, 119, 14);
 		frame.getContentPane().add(lbl_name_not_yet_taken);
 		
-		tf_choose_a_name = new JTextField();
-		tf_choose_a_name.setBounds(142, 133, 153, 20);
-		frame.getContentPane().add(tf_choose_a_name);
-		tf_choose_a_name.setColumns(10);
-		
 		tf_create_a_password = new JTextField();
 		tf_create_a_password.setBounds(142, 158, 153, 20);
 		frame.getContentPane().add(tf_create_a_password);
 		tf_create_a_password.setColumns(10);
 		
 		JButton btn_play = new JButton("✌");
+		btn_play.setEnabled(false);
 		btn_play.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_play.setToolTipText("Standard Rules");
 		btn_play.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 35));
@@ -110,6 +110,7 @@ public class Main_Menu {
 		frame.getContentPane().add(btn_play);
 		
 		JButton btn_records = new JButton("📜");
+		btn_records.setEnabled(false);
 		btn_records.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_records.setToolTipText("View records");
 		btn_records.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
@@ -117,6 +118,7 @@ public class Main_Menu {
 		frame.getContentPane().add(btn_records);
 		
 		JButton btn_custom = new JButton("🛠");
+		btn_custom.setEnabled(false);
 		btn_custom.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_custom.setToolTipText("Custom rules");
 		btn_custom.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
@@ -129,6 +131,7 @@ public class Main_Menu {
 		frame.getContentPane().add(btn_custom);
 		
 		JButton btn_lizard = new JButton("🤏");
+		btn_lizard.setEnabled(false);
 		btn_lizard.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_lizard.setToolTipText("\"Lizard Spock\"");
 		btn_lizard.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
@@ -141,6 +144,7 @@ public class Main_Menu {
 		frame.getContentPane().add(btn_lizard);
 		
 		JButton btn_spiderman = new JButton("🤟");
+		btn_spiderman.setEnabled(false);
 		btn_spiderman.setToolTipText("\"Spiderman Batman Wizard Glock\"");
 		btn_spiderman.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_spiderman.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
@@ -151,5 +155,29 @@ public class Main_Menu {
 		});
 		btn_spiderman.setBounds(179, 207, 80, 54);
 		frame.getContentPane().add(btn_spiderman);
+		
+		tf_choose_a_name = new JTextField();
+		tf_choose_a_name.setBounds(142, 133, 153, 20);
+		frame.getContentPane().add(tf_choose_a_name);
+		tf_choose_a_name.setColumns(10);
+		tf_choose_a_name.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try{
+					String username_status = Login_Handler.check_username(records, tf_choose_a_name.getText());
+					System.out.print(username_status);
+					if (username_status == "free") {
+						btn_play.setEnabled(true);
+						btn_lizard.setEnabled(true);
+						btn_spiderman.setEnabled(true);
+						btn_custom.setEnabled(true);
+						btn_records.setEnabled(true);
+					}
+				}
+				catch(Exception ex){
+					System.out.print("File not found");
+				};
+			}
+		});
+		
 	}
 }
