@@ -23,7 +23,7 @@ public class Main_Menu {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -78,7 +78,7 @@ public class Main_Menu {
 		JLabel lbl_create_a_password = new JLabel("Create a password: ");
 		lbl_create_a_password.setForeground(new Color(255, 255, 255));
 		lbl_create_a_password.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lbl_create_a_password.setBounds(20, 159, 156, 14);
+		lbl_create_a_password.setBounds(20, 159, 156, 19);
 		frame.getContentPane().add(lbl_create_a_password);
 		
 		JLabel lbl_name_not_yet_taken = new JLabel("Name not yet taken");
@@ -103,6 +103,7 @@ public class Main_Menu {
 		btn_play.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 35));
 		btn_play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main();
 			}
 		});
 		btn_play.setBounds(0, 207, 80, 54);
@@ -119,21 +120,36 @@ public class Main_Menu {
 		btn_custom.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_custom.setToolTipText("Custom rules");
 		btn_custom.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
+		btn_custom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main();
+			}
+		});
 		btn_custom.setBounds(269, 207, 80, 54);
 		frame.getContentPane().add(btn_custom);
 		
-		JButton btn_custom_1 = new JButton("🤏");
-		btn_custom_1.setVerticalAlignment(SwingConstants.BOTTOM);
-		btn_custom_1.setToolTipText("\"Lizard Spock\"");
-		btn_custom_1.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
-		btn_custom_1.setBounds(89, 207, 80, 54);
-		frame.getContentPane().add(btn_custom_1);
+		JButton btn_lizard = new JButton("🤏");
+		btn_lizard.setVerticalAlignment(SwingConstants.BOTTOM);
+		btn_lizard.setToolTipText("\"Lizard Spock\"");
+		btn_lizard.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
+		btn_lizard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main();
+			}
+		});
+		btn_lizard.setBounds(89, 207, 80, 54);
+		frame.getContentPane().add(btn_lizard);
 		
-		JButton btn_custom_2 = new JButton("🤟");
-		btn_custom_2.setToolTipText("\"Spiderman Batman Wizard Glock\"");
-		btn_custom_2.setVerticalAlignment(SwingConstants.BOTTOM);
-		btn_custom_2.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
-		btn_custom_2.setBounds(179, 207, 80, 54);
-		frame.getContentPane().add(btn_custom_2);
+		JButton btn_spiderman = new JButton("🤟");
+		btn_spiderman.setToolTipText("\"Spiderman Batman Wizard Glock\"");
+		btn_spiderman.setVerticalAlignment(SwingConstants.BOTTOM);
+		btn_spiderman.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
+		btn_spiderman.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main();
+			}
+		});
+		btn_spiderman.setBounds(179, 207, 80, 54);
+		frame.getContentPane().add(btn_spiderman);
 	}
 }
