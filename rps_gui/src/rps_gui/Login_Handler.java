@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Login_Handler {
 	
-	public static String check_username(File source, String username) throws FileNotFoundException {
+	public String check_username(File source, String username) throws FileNotFoundException {
 		Scanner reader = new Scanner(source);
 		/*while (reader.hasNext()) {
 			if (reader.findInLine(username) == username)
@@ -13,9 +13,11 @@ public class Login_Handler {
 				reader.skip();
 		}*/
 		if (reader.next() == username) {
+			reader.close();
 			return("taken");
 		}
 		else{
+			reader.close();
 			return("free");
 		}
 	}

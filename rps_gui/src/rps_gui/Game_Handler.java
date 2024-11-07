@@ -4,15 +4,15 @@ import java.io.*;
 
 public class Game_Handler {
 	
-	public static void run_game(int user_sign) {
+	public void run_game(int user_sign) {
 		compare_signs(user_sign, get_random_sign());
 	}
 	
-	public static int get_random_sign() {
+	public int get_random_sign() {
 		Random rand = new Random();
 		return rand.nextInt(1,4);
 	}
-	public static void compare_signs(int user_sign, int cpu_sign) {
+	public void compare_signs(int user_sign, int cpu_sign) {
 		System.out.println("Player: " + user_sign);
 		System.out.println("CPU: " + cpu_sign);
 		int difference = user_sign - cpu_sign;

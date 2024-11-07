@@ -50,6 +50,7 @@ public class Main_Menu {
 	 */
 	private void initialize() {
 		File records = new File ("records.txt");
+		Login_Handler login = new Login_Handler();
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(128, 128, 128));
@@ -103,7 +104,7 @@ public class Main_Menu {
 		btn_play.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 35));
 		btn_play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main();
+				Play_Screen.main(0);
 			}
 		});
 		btn_play.setBounds(0, 207, 80, 54);
@@ -124,7 +125,7 @@ public class Main_Menu {
 		btn_custom.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
 		btn_custom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main();
+				Play_Screen.main(3,"A B C");
 			}
 		});
 		btn_custom.setBounds(269, 207, 80, 54);
@@ -137,7 +138,7 @@ public class Main_Menu {
 		btn_lizard.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
 		btn_lizard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main();
+				Play_Screen.main(1);
 			}
 		});
 		btn_lizard.setBounds(89, 207, 80, 54);
@@ -150,7 +151,7 @@ public class Main_Menu {
 		btn_spiderman.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
 		btn_spiderman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main();
+				Play_Screen.main(2);
 			}
 		});
 		btn_spiderman.setBounds(179, 207, 80, 54);
@@ -163,7 +164,7 @@ public class Main_Menu {
 		tf_choose_a_name.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-					String username_status = Login_Handler.check_username(records, tf_choose_a_name.getText());
+					String username_status = login.check_username(records, tf_choose_a_name.getText());
 					System.out.println(username_status);
 					if (username_status == "free") {
 						btn_play.setEnabled(true);
