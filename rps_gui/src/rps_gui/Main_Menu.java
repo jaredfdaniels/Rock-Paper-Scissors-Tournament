@@ -164,7 +164,7 @@ public class Main_Menu {
 			public void actionPerformed(ActionEvent e) {
 				try{
 					String username_status = Login_Handler.check_username(records, tf_choose_a_name.getText());
-					System.out.print(username_status);
+					System.out.println(username_status);
 					if (username_status == "free") {
 						btn_play.setEnabled(true);
 						btn_lizard.setEnabled(true);

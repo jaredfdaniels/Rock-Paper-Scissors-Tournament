@@ -6,7 +6,12 @@ public class Login_Handler {
 	
 	public static String check_username(File source, String username) throws FileNotFoundException {
 		Scanner reader = new Scanner(source);
-		System.out.println();
+		/*while (reader.hasNext()) {
+			if (reader.findInLine(username) == username)
+				break;
+			else
+				reader.skip();
+		}*/
 		if (reader.next() == username) {
 			return("taken");
 		}

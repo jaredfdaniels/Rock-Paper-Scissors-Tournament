@@ -13,8 +13,8 @@ public class Game_Handler {
 		return rand.nextInt(1,4);
 	}
 	public static void compare_signs(int user_sign, int cpu_sign) {
-		System.out.print("Player: " + user_sign);
-		System.out.print("CPU: " + cpu_sign);
+		System.out.println("Player: " + user_sign);
+		System.out.println("CPU: " + cpu_sign);
 		int difference = user_sign - cpu_sign;
 		if (difference == 0) {
 			System.out.println("Tie!");
