@@ -49,7 +49,6 @@ public class Main_Menu {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		File records = new File ("records.txt");
 		Login_Handler login = new Login_Handler();
 		
 		frame = new JFrame();
@@ -80,35 +79,77 @@ public class Main_Menu {
 		lbl_choose_a_name.setBounds(20, 134, 119, 14);
 		frame.getContentPane().add(lbl_choose_a_name);
 		
+		JLabel lbl_name_not_yet_taken = new JLabel("Name not yet taken");
+		lbl_name_not_yet_taken.setEnabled(false);
+		lbl_name_not_yet_taken.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lbl_name_not_yet_taken.setForeground(new Color(0, 255, 0));
+		lbl_name_not_yet_taken.setBounds(305, 135, 119, 14);
+		frame.getContentPane().add(lbl_name_not_yet_taken);
+		
 		JLabel lbl_create_a_password = new JLabel("Create a password: ");
 		lbl_create_a_password.setForeground(new Color(255, 255, 255));
 		lbl_create_a_password.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lbl_create_a_password.setBounds(20, 159, 156, 19);
 		frame.getContentPane().add(lbl_create_a_password);
 		
-		JLabel lbl_name_not_yet_taken = new JLabel("Name not yet taken");
-		lbl_name_not_yet_taken.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lbl_name_not_yet_taken.setForeground(new Color(0, 255, 0));
-		lbl_name_not_yet_taken.setBounds(305, 135, 119, 14);
-		frame.getContentPane().add(lbl_name_not_yet_taken);
-		
-		tf_create_a_password = new JTextField();
-		tf_create_a_password.setBounds(142, 158, 153, 20);
-		frame.getContentPane().add(tf_create_a_password);
-		tf_create_a_password.setColumns(10);
+		JLabel lbl_incorrect_password = new JLabel("");
+		lbl_incorrect_password.setForeground(Color.RED);
+		lbl_incorrect_password.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lbl_incorrect_password.setEnabled(false);
+		lbl_incorrect_password.setBounds(305, 160, 119, 14);
+		frame.getContentPane().add(lbl_incorrect_password);
 		
 		JButton btn_play = new JButton("✌");
 		btn_play.setEnabled(false);
 		btn_play.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_play.setToolTipText("Standard Rules");
 		btn_play.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 35));
+		btn_play.setBounds(0, 207, 80, 54);
+		frame.getContentPane().add(btn_play);
 		btn_play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Play_Screen.main(3);
 			}
 		});
-		btn_play.setBounds(0, 207, 80, 54);
-		frame.getContentPane().add(btn_play);
+		
+		JButton btn_lizard = new JButton("🤏");
+		btn_lizard.setEnabled(false);
+		btn_lizard.setVerticalAlignment(SwingConstants.BOTTOM);
+		btn_lizard.setToolTipText("\"Lizard Spock\"");
+		btn_lizard.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
+		btn_lizard.setBounds(89, 207, 80, 54);
+		frame.getContentPane().add(btn_lizard);
+		btn_lizard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main(5);
+			}
+		});
+		
+		JButton btn_spiderman = new JButton("🤟");
+		btn_spiderman.setEnabled(false);
+		btn_spiderman.setToolTipText("\"Spiderman Batman Wizard Glock\"");
+		btn_spiderman.setVerticalAlignment(SwingConstants.BOTTOM);
+		btn_spiderman.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
+		btn_spiderman.setBounds(179, 207, 80, 54);
+		frame.getContentPane().add(btn_spiderman);
+		btn_spiderman.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main(9);
+			}
+		});
+		
+		JButton btn_custom = new JButton("🛠");
+		btn_custom.setEnabled(false);
+		btn_custom.setVerticalAlignment(SwingConstants.BOTTOM);
+		btn_custom.setToolTipText("Custom rules");
+		btn_custom.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
+		btn_custom.setBounds(269, 207, 80, 54);
+		frame.getContentPane().add(btn_custom);
+		btn_custom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Play_Screen.main(3,"A B C");
+			}
+		});
 		
 		JButton btn_records = new JButton("📜");
 		btn_records.setEnabled(false);
@@ -118,66 +159,51 @@ public class Main_Menu {
 		btn_records.setBounds(359, 207, 80, 54);
 		frame.getContentPane().add(btn_records);
 		
-		JButton btn_custom = new JButton("🛠");
-		btn_custom.setEnabled(false);
-		btn_custom.setVerticalAlignment(SwingConstants.BOTTOM);
-		btn_custom.setToolTipText("Custom rules");
-		btn_custom.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
-		btn_custom.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main(3,"A B C");
-			}
-		});
-		btn_custom.setBounds(269, 207, 80, 54);
-		frame.getContentPane().add(btn_custom);
-		
-		JButton btn_lizard = new JButton("🤏");
-		btn_lizard.setEnabled(false);
-		btn_lizard.setVerticalAlignment(SwingConstants.BOTTOM);
-		btn_lizard.setToolTipText("\"Lizard Spock\"");
-		btn_lizard.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
-		btn_lizard.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main(5);
-			}
-		});
-		btn_lizard.setBounds(89, 207, 80, 54);
-		frame.getContentPane().add(btn_lizard);
-		
-		JButton btn_spiderman = new JButton("🤟");
-		btn_spiderman.setEnabled(false);
-		btn_spiderman.setToolTipText("\"Spiderman Batman Wizard Glock\"");
-		btn_spiderman.setVerticalAlignment(SwingConstants.BOTTOM);
-		btn_spiderman.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
-		btn_spiderman.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main(9);
-			}
-		});
-		btn_spiderman.setBounds(179, 207, 80, 54);
-		frame.getContentPane().add(btn_spiderman);
-		
 		tf_choose_a_name = new JTextField();
 		tf_choose_a_name.setBounds(142, 133, 153, 20);
 		frame.getContentPane().add(tf_choose_a_name);
 		tf_choose_a_name.setColumns(10);
 		tf_choose_a_name.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try{
-					String username_status = login.check_username(records, tf_choose_a_name.getText());
-					System.out.println(username_status);
-					if (username_status == "free") {
-						btn_play.setEnabled(true);
-						btn_lizard.setEnabled(true);
-						btn_spiderman.setEnabled(true);
-						btn_custom.setEnabled(true);
-						btn_records.setEnabled(true);
+				lbl_incorrect_password.setEnabled(false);
+				lbl_incorrect_password.setText("");
+					lbl_name_not_yet_taken.setEnabled(true);
+					Boolean username_status = login.check_username(tf_choose_a_name.getText());
+					if (username_status) {
+						lbl_name_not_yet_taken.setForeground(new Color(255, 0, 0));
+						lbl_name_not_yet_taken.setText("Name taken");
+						lbl_create_a_password.setText("Confirm Password: ");
 					}
-					
+					else {
+						lbl_name_not_yet_taken.setForeground(new Color(0, 255, 0));
+						lbl_name_not_yet_taken.setText("Name not yet taken");
+						lbl_create_a_password.setText("Create a Password: ");
+					}
+			}
+		});
+		
+		tf_create_a_password = new JTextField();
+		tf_create_a_password.setBounds(142, 158, 153, 20);
+		frame.getContentPane().add(tf_create_a_password);
+		tf_create_a_password.setColumns(10);
+		tf_create_a_password.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Boolean password_status = login.check_password(tf_choose_a_name.getText(), tf_create_a_password.getText());
+				if (password_status) {
+					lbl_name_not_yet_taken.setEnabled(false);
+					lbl_incorrect_password.setEnabled(false);
+					lbl_incorrect_password.setText("");
+					btn_play.setEnabled(true);
+					btn_lizard.setEnabled(true);
+					btn_spiderman.setEnabled(true);
+					btn_custom.setEnabled(true);
+					btn_records.setEnabled(true);
 				}
-				catch(Exception ex){
-					System.out.print("File not found");
-				};
+				else {
+					lbl_name_not_yet_taken.setEnabled(true);
+					lbl_incorrect_password.setEnabled(true);
+					lbl_incorrect_password.setText("Incorrect Password");
+				}
 			}
 		});
 		

@@ -3,34 +3,54 @@ import java.util.*;
 import java.io.*;
 
 public class Login_Handler {
+	HashMap<String,Object> credentials_map;
 	
-	public String check_username(File source, String username) throws FileNotFoundException {
-		Scanner reader = new Scanner(source);
-		/*while (reader.hasNext()) {
-			if (reader.findInLine(username) == username)
-				break;
-			else
-				reader.skip();
-		}*/
-		if (reader.next() == username) {
-			reader.close();
-			return("taken");
-		}
-		else{
-			reader.close();
-			return("free");
-		}
-	}
-	public void check_password() {
+	public Login_Handler() {
+		try{
+			File credentials = new File ("credentials.txt");
+			FileInputStream f = new FileInputStream(credentials);
+			ObjectInputStream s = new ObjectInputStream(f);
+			credentials_map = (HashMap<String,Object>)s.readObject();
+			s.close();
 			
 		}
-	public void add_username() {
-		
+		catch(Exception ex){
+			System.out.print("File not found");
+		};
 	}
-	public void add_password() {
-		
+	
+	public Boolean check_username(String username){
+		return credentials_map.containsKey(username);
 	}
-	public void prompt_password() {
-		
+	
+	public Boolean check_password(String username, String password) {
+		if (credentials_map.containsKey(username) && credentials_map.get(username).equals(password))
+			return true;
+		else if (!credentials_map.containsKey(username)) {
+			add_user(username, password);
+			return true;
+		}
+		return false;
 	}
+	
+	public void add_user(String username, String password) {
+		credentials_map.put(username, password);
+		update_credentials();
+	}
+	
+	public void update_credentials () {
+		try{
+			File credentials = new File ("credentials.txt");
+			FileOutputStream f = new FileOutputStream(credentials);
+			ObjectOutputStream s = new ObjectOutputStream(f);
+			s.writeObject(credentials_map);
+			s.flush();
+			s.close();
+			
+		}
+		catch(Exception ex){
+			System.out.print("File not found");
+		};
+	}
+	
 }
