@@ -4,13 +4,13 @@ import java.io.*;
 
 public class Game_Handler {
 	
-	public void run_game(int user_sign) {
-		compare_signs(user_sign, get_random_sign());
+	public void run_game(int user_sign, int sign_count) {
+		compare_signs(user_sign, get_random_sign(sign_count));
 	}
 	
-	public int get_random_sign() {
+	public int get_random_sign(int sign_count) {
 		Random rand = new Random();
-		return rand.nextInt(1,4);
+		return rand.nextInt(1,sign_count+1);
 	}
 	public void compare_signs(int user_sign, int cpu_sign) {
 		System.out.println("Player: " + user_sign);

@@ -68,7 +68,7 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_1);
 		btn_sign_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(1);
+				game.run_game(1, sign_number);
 			}
 		});
 		
@@ -79,7 +79,7 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_2);
 		btn_sign_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(2);
+				game.run_game(2, sign_number);
 			}
 		});
 		
@@ -90,12 +90,12 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_3);
 		btn_sign_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(3);
+				game.run_game(3, sign_number);
 			}
 		});
 		
 		JButton btn_sign_4 = new JButton("🤏");
-		if (sign_number == 0)
+		if (sign_number == 3)
 			btn_sign_4.setEnabled(false);
 		btn_sign_4.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_sign_4.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
@@ -103,12 +103,12 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_4);
 		btn_sign_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(4);
+				game.run_game(4, sign_number);
 			}
 		});
 		
 		JButton btn_sign_5 = new JButton("🖖");
-		if (sign_number == 0)
+		if (sign_number == 3)
 			btn_sign_5.setEnabled(false);
 		btn_sign_5.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_sign_5.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
@@ -116,12 +116,12 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_5);
 		btn_sign_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(5);
+				game.run_game(5, sign_number);
 			}
 		});
 		
 		JButton btn_sign_6 = new JButton("🤟");
-		if (sign_number != 2)
+		if (sign_number != 9)
 			btn_sign_6.setEnabled(false);
 		btn_sign_6.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_sign_6.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
@@ -129,12 +129,12 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_6);
 		btn_sign_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(6);
+				game.run_game(6, sign_number);
 			}
 		});
 		
 		JButton btn_sign_7 = new JButton("👌");
-		if (sign_number != 2)
+		if (sign_number != 9)
 			btn_sign_7.setEnabled(false);
 		btn_sign_7.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_sign_7.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
@@ -142,12 +142,12 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_7);
 		btn_sign_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(7);
+				game.run_game(7, sign_number);
 			}
 		});
 		
 		JButton btn_sign_8 = new JButton("🤘");
-		if (sign_number != 2)
+		if (sign_number != 9)
 			btn_sign_8.setEnabled(false);
 		btn_sign_8.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_sign_8.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
@@ -155,12 +155,12 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_8);
 		btn_sign_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(8);
+				game.run_game(8, sign_number);
 			}
 		});
 		
 		JButton btn_sign_9 = new JButton("👈");
-		if (sign_number != 2)
+		if (sign_number != 9)
 			btn_sign_9.setEnabled(false);
 		btn_sign_9.setVerticalAlignment(SwingConstants.BOTTOM);
 		btn_sign_9.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
@@ -168,7 +168,7 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_9);
 		btn_sign_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(9);
+				game.run_game(9, sign_number);
 			}
 		});
 	}

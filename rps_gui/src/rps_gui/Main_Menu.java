@@ -104,7 +104,7 @@ public class Main_Menu {
 		btn_play.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 35));
 		btn_play.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main(0);
+				Play_Screen.main(3);
 			}
 		});
 		btn_play.setBounds(0, 207, 80, 54);
@@ -138,7 +138,7 @@ public class Main_Menu {
 		btn_lizard.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 33));
 		btn_lizard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main(1);
+				Play_Screen.main(5);
 			}
 		});
 		btn_lizard.setBounds(89, 207, 80, 54);
@@ -151,7 +151,7 @@ public class Main_Menu {
 		btn_spiderman.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 30));
 		btn_spiderman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Play_Screen.main(2);
+				Play_Screen.main(9);
 			}
 		});
 		btn_spiderman.setBounds(179, 207, 80, 54);
