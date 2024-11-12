@@ -17,7 +17,7 @@ public class Game_Handler {
 		System.out.println("Player: " + user_sign);
 		System.out.println("CPU: " + cpu_sign);
 		
-		/* Uses sign values' difference and sign (+/-) to find outcome
+		/* Uses sign values' difference and its sign (+/-) to find outcome
 			independent of ruleset, based on the following table:
 			(↓Offense →Defense, 1-9, +=win -=lose o=tie)
 			
