@@ -12,9 +12,26 @@ public class Game_Handler {
 		Random rand = new Random();
 		return rand.nextInt(1,sign_count+1);
 	}
+	
 	public void compare_signs(int user_sign, int cpu_sign) {
 		System.out.println("Player: " + user_sign);
 		System.out.println("CPU: " + cpu_sign);
+		
+		/* Uses sign values' difference and sign (+/-) to find outcome
+			independent of ruleset, based on the following table:
+			(↓Offense →Defense, 1-9, +=win -=lose o=tie)
+			
+		     	   Roc Pap Sci Glo Spi Bat Wiz Spo Liz
+				Roc o   -   +   -   +   -   +   -   +
+				Pap +   o   -   +   -   +   -   +   -
+				Sci -   +   o   -   +   -   +   -   +
+				Glo +   -   +   o   -   +   -   +   -
+				Spi -   +   -   +   o   -   +   -   +
+				Bat +   -   +   -   +   o   -   +   -
+				Wiz -   +   -   +   -   +   o   -   +
+				Spo +   -   +   -   +   -   +   o   -
+				Liz -   +   -   +   -   +   -   +   o  */
+		
 		int difference = user_sign - cpu_sign;
 		if (difference == 0) {
 			System.out.println("Tie!");
@@ -29,10 +46,13 @@ public class Game_Handler {
 			System.out.println("Game handler computation error");
 		}
 	}
+	
 	public void update_records() {
 		
 	}
+	
 	public void round_result() {
 		
 	}
+	
 }

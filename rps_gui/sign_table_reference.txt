@@ -1,0 +1,10 @@
+   Roc Pap Sci Glo Spi Bat Wiz Spo Liz
+Roc o   -   +   -   +   -   +   -   +
+Pap +   o   -   +   -   +   -   +   -
+Sci -   +   o   -   +   -   +   -   +
+Glo +   -   +   o   -   +   -   +   -
+Spi -   +   -   +   o   -   +   -   +
+Bat +   -   +   -   +   o   -   +   -
+Wiz -   +   -   +   -   +   o   -   +
+Spo +   -   +   -   +   -   +   o   -
+Liz -   +   -   +   -   +   -   +   o

@@ -7,12 +7,14 @@ public class Login_Handler {
 	
 	public Login_Handler() {
 		try{
+			// Read file to hash map approach based on:
+			//https://stackoverflow.com/questions/3347504/how-to-read-and-write-a-hashmap-to-a-file
+			
 			File credentials = new File ("credentials.txt");
 			FileInputStream f = new FileInputStream(credentials);
 			ObjectInputStream s = new ObjectInputStream(f);
 			credentials_map = (HashMap<String,Object>)s.readObject();
 			s.close();
-			
 		}
 		catch(Exception ex){
 			System.out.print("File not found");
@@ -40,6 +42,9 @@ public class Login_Handler {
 	
 	public void update_credentials () {
 		try{
+			// Write hash map to file approach based on:
+			// https://stackoverflow.com/questions/3347504/how-to-read-and-write-a-hashmap-to-a-file
+			
 			File credentials = new File ("credentials.txt");
 			FileOutputStream f = new FileOutputStream(credentials);
 			ObjectOutputStream s = new ObjectOutputStream(f);

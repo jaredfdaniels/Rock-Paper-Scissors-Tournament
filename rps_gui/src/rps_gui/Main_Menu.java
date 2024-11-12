@@ -165,6 +165,8 @@ public class Main_Menu {
 		tf_choose_a_name.setColumns(10);
 		tf_choose_a_name.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Should convert below into its own method
+				// Changes labels based on username status
 				lbl_incorrect_password.setEnabled(false);
 				lbl_incorrect_password.setText("");
 					lbl_name_not_yet_taken.setEnabled(true);
@@ -188,6 +190,8 @@ public class Main_Menu {
 		tf_create_a_password.setColumns(10);
 		tf_create_a_password.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Should convert below into its own method
+				// Enables play buttons and changes label based on password status
 				Boolean password_status = login.check_password(tf_choose_a_name.getText(), tf_create_a_password.getText());
 				if (password_status) {
 					lbl_name_not_yet_taken.setEnabled(false);

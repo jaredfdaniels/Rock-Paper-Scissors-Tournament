@@ -30,6 +30,7 @@ public class Play_Screen {
 		});
 	}
 	
+	// Custom Rules constructor
 	public static void main(int custom_sign_number, String custom_sign_names) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -103,7 +104,7 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_4);
 		btn_sign_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(4, sign_number);
+				game.run_game(9, sign_number);
 			}
 		});
 		
@@ -116,7 +117,7 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_5);
 		btn_sign_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(5, sign_number);
+				game.run_game(8, sign_number);
 			}
 		});
 		
@@ -128,6 +129,19 @@ public class Play_Screen {
 		btn_sign_6.setBounds(10, 131, 89, 23);
 		frame.getContentPane().add(btn_sign_6);
 		btn_sign_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				game.run_game(5, sign_number);
+			}
+		});
+		
+		JButton btn_sign_8 = new JButton("🤘");
+		if (sign_number != 9)
+			btn_sign_8.setEnabled(false);
+		btn_sign_8.setVerticalAlignment(SwingConstants.BOTTOM);
+		btn_sign_8.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
+		btn_sign_8.setBounds(122, 131, 89, 23);
+		frame.getContentPane().add(btn_sign_8);
+		btn_sign_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				game.run_game(6, sign_number);
 			}
@@ -146,19 +160,6 @@ public class Play_Screen {
 			}
 		});
 		
-		JButton btn_sign_8 = new JButton("🤘");
-		if (sign_number != 9)
-			btn_sign_8.setEnabled(false);
-		btn_sign_8.setVerticalAlignment(SwingConstants.BOTTOM);
-		btn_sign_8.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
-		btn_sign_8.setBounds(122, 131, 89, 23);
-		frame.getContentPane().add(btn_sign_8);
-		btn_sign_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				game.run_game(8, sign_number);
-			}
-		});
-		
 		JButton btn_sign_9 = new JButton("👈");
 		if (sign_number != 9)
 			btn_sign_9.setEnabled(false);
@@ -168,7 +169,7 @@ public class Play_Screen {
 		frame.getContentPane().add(btn_sign_9);
 		btn_sign_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.run_game(9, sign_number);
+				game.run_game(4, sign_number);
 			}
 		});
 	}
