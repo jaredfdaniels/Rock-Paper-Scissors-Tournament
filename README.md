@@ -18,8 +18,7 @@ I. Main Menu
 		&emsp;&emsp;1. Not yet functional.  
 	&emsp;G. tf_choose_a_name  
 		&emsp;&emsp;-Note: planning to convert functionality into its own method  
-		&emsp;1. On action event, resets lbl_incorrect_password,  
-			&emsp;&emsp;enables lbl_name_taken and uses Login_Handler.check_username to determine the text for lbl_name_taken and lbl_create_a_password  
+		&emsp;1. On action event, resets lbl_incorrect_password, enables lbl_name_taken and uses Login_Handler.check_username to determine the text for lbl_name_taken and lbl_create_a_password  
 	&emsp;H. tf_create_a_password  
 		&emsp;&emsp;-Note: planning to convert functionality into its own method  
 		&emsp;&emsp;1. On action event, enables or disables lbl_name_taken, lbl_incorrect_password, and the 4 play buttons based on Login_Handler.check_password  
