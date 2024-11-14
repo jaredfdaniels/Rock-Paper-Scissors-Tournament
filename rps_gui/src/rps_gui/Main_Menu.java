@@ -169,8 +169,8 @@ public class Main_Menu {
 				// Changes labels based on username status
 				lbl_incorrect_password.setEnabled(false);
 				lbl_incorrect_password.setText("");
-					lbl_name_not_yet_taken.setEnabled(true);
-					Boolean username_status = login.check_username(tf_choose_a_name.getText());
+				lbl_name_not_yet_taken.setEnabled(true);
+				Boolean username_status = login.check_username(tf_choose_a_name.getText());
 					if (username_status) {
 						lbl_name_not_yet_taken.setForeground(new Color(255, 0, 0));
 						lbl_name_not_yet_taken.setText("Name taken");
@@ -207,6 +207,11 @@ public class Main_Menu {
 					lbl_name_not_yet_taken.setEnabled(true);
 					lbl_incorrect_password.setEnabled(true);
 					lbl_incorrect_password.setText("Incorrect Password");
+					btn_play.setEnabled(false);
+					btn_lizard.setEnabled(false);
+					btn_spiderman.setEnabled(false);
+					btn_custom.setEnabled(false);
+					btn_records.setEnabled(false);
 				}
 			}
 		});
