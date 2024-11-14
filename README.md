@@ -74,18 +74,20 @@ IV. Game_Handler
 
 TO-DO:  
 	&emsp;1. Video Explanation(s)  
-	&emsp;2. Play Screen GUI  
+ 	&emsp;2. Connect to Database
+	&emsp;3. Play Screen GUI  
 		&emsp;&emsp;a. Rearrange/redecorate  
 		&emsp;&emsp;b. Results display  
 		&emsp;&emsp;c. Specific descriptions  
 			&emsp;&emsp;&emsp;(Ex. "Scissors cut Paper")  
 		&emsp;&emsp;d. Best of- integration?  
-	&emsp;3. Records Integration  
+	&emsp;4. Records Integration  
 		&emsp;&emsp;a. Create Records_Handler  
 		&emsp;&emsp;b. Nested Hash Map  
 		&emsp;&emsp;c. GUI Screen + Navigation  
 		&emsp;&emsp;d. Recieve from Game_Handler  
-	&emsp;4. Custom Rule Creation Screen  
+	&emsp;5. Custom Rule Creation Screen  
+ 	&emsp;6. Fix README Formatting
 
 
 
