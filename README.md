@@ -74,7 +74,7 @@ IV. Game_Handler
 
 TO-DO:  
 	&emsp;1. Video Explanation(s)  
- 	&emsp;2. Connect to Database
+ 	&emsp;2. Connect to Database  
 	&emsp;3. Play Screen GUI  
 		&emsp;&emsp;a. Rearrange/redecorate  
 		&emsp;&emsp;b. Results display  
